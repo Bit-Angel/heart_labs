@@ -1,0 +1,39 @@
+<app-nav-bar class="NAV"></app-nav-bar>
+
+<div class="container espacioAB">
+  <div class="card login">
+
+    <aside class="logForm">
+      <img class="imgLab" src="../../assets/login/lab_flask.svg" alt="lab_flask">
+
+      <form [formGroup]="formulario" (ngSubmit)="onSubmit()" class="mt-4">
+        <h4 class="tituloform mb-4 mt-4">Iniciar Sesion</h4>
+
+        <div class="inputForm">
+          <input type="email" class="inputFormControl" formControlName="email" value="" placeholder="email">
+          <img src="../../assets/login/user.svg" alt="user" class="inputForm__img">
+          <span class="form__bar"></span>
+        </div>
+
+        <div class="inputForm mt-4">
+          <input type="password" class="inputFormControl" formControlName="password" placeholder="contraseña">
+          <img src="../../assets/login/key.svg" alt="key" class="inputForm__img">
+          <span class="form__bar"></span>
+        </div>
+
+        <a routerLink="/loginPhone" class="IngresaCell mt-3">Ingresa con tu celular</a>
+
+        <input type="submit" value="Ingresar" class="botonSubmitt">
+
+      </form>
+
+      <p class="noCuenta">¿No tienes una cuenta? <a routerLink="/registerUser">Crea una</a></p>
+
+    </aside>
+
+    <aside class="imgForm">
+      <img src="../../assets/logos/hl-vw.svg" alt="">
+    </aside>
+  </div>
+
+</div>

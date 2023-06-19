@@ -1,0 +1,46 @@
+<app-barra-lateral-root></app-barra-lateral-root>
+
+<div class="container">
+    
+    <div class="card card-principal">
+      <div class="card-body">
+        <h2 class="text-center">Logs</h2>
+        <!-- <div class="card card-body d-flex flex-row">
+         <h3>Este le toca a fatima</h3>
+         <p>Agregar una grafica en comparativa entre cuantos estudios si tienen doctor (plaza en 1), y cuantos no (plaza 0)</p>
+        
+        </div> -->
+  
+        <div class="container mt-5 pt-5">
+          <div class="col-12">
+              <div class="row">
+
+                <table class="tablita">
+                    <thead>
+                        <tr>
+                            <th COLSPAN=4 style="text-align: center;"></th>
+                        </tr>
+                        <tr>
+                            <th>ID Log</th>
+                            <th>Tipo</th>
+                            <th>Descripcion</th>
+                            <th>Fecha</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let log of arrLogs">
+                        <th> {{log.idregistro}} </th>
+                        <th> {{log.accion}} </th>
+                        <th>{{log.desc}}</th>
+                        <th>{{log.fecha}}</th>
+
+                        </tr>
+                    </tbody>
+                </table> 
+            </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

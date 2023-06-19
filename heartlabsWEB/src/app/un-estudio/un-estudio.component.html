@@ -1,0 +1,40 @@
+
+<app-nav-bar class="NAV"></app-nav-bar>
+
+<div class="container espacioAB">
+  <h1 class="animated fadeIn">{{cita.nombreEstudio}}</h1>
+
+<hr>
+<div class="row animated fadeIn fast">
+  <div class="col md-4 text-center">
+    <img width="600px" src="{{cita.img}}" alt="" class="img-fluid mb-3">
+
+    <a (click)="formulario=true" class="btn btn-outline-primary btn-block">Agendar una cita</a>
+    <a [routerLink]="['/estudios']" class="btn btn-outline-secondary btn-block">Regresar</a>
+  </div>
+  <div class="col md-8">
+    <h5>Doctor:  {{cita.nombreDoc}}</h5>
+    <h6>Telefono:  {{cita.tel}}</h6>
+
+    <small>ID: {{cita.idEstudio}}</small>
+    <h6>{{cita.precio | currency}}</h6>
+    <hr>
+    <p><strong>Proceso:</strong> </p>
+    <p>
+      {{cita.descripcion}}
+    </p>
+    <p> <strong> Laboratorio:</strong></p>
+    <p>
+      {{cita.nombreLab}}
+    </p>
+    <p> <strong> Tipo de estudio:</strong></p>
+    <p>
+      {{cita.tipoEstudio}}
+    </p>
+  </div>
+</div>
+
+<div *ngIf="formulario">
+   <input [(ngModel)]="fechaCita" type="datetime-local">
+   <button (click)="agendarCita()">Agendar</button>
+</div>

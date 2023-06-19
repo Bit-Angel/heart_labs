@@ -1,0 +1,104 @@
+.dentro{
+    display: flex;
+}
+
+
+.botones{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    min-width: 300px;
+}
+
+.botones button, .resultadosbtn{
+    color: white;
+    width: 200px;
+    padding: .5rem .9rem;
+    background-color: var(--c1);
+    font-size: .95rem;
+    border: none;
+    border-radius: 50px;
+    margin-bottom: 10px;
+    transition: all .12s ease;
+}
+
+
+
+.botones button:nth-child(2){
+    background-color: var(--c3);
+}
+
+.botones button:hover{
+    transform: scale(1.05);
+    background-color: var(--c2);
+}
+
+.botones button:nth-child(2):hover{
+    background-color: var(--c4);
+}
+
+.resultadosbtn{
+    width: max-content;
+    transform: scale(.9);
+}
+.resultadosbtn:hover{
+    background-color: var(--c2);
+}
+
+.skeFlex{
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    max-width: 50%;
+    margin: 0;
+}
+
+.datos{
+    display: flex;
+    flex-wrap: wrap;
+}
+.botonera{
+    justify-content: center;
+    flex-direction: row;
+    gap: 20px;
+}
+
+.txtarea{
+    max-width: 90%;
+    min-width: 90%;
+}
+
+.datos p{
+    margin-right: 20px;
+}
+
+.codigoQR{
+    margin: 0 auto;
+}
+
+
+@media (max-width: 768px) {
+    .dentro{
+        width: 90%;
+        margin: 0 auto;
+        flex-direction: column;
+    }
+    .card h2{
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+
+    .botones button{
+        transform: scale(.85);
+    }
+    .botones button:hover{
+        transform: scale(.95);
+    }
+    
+}
+

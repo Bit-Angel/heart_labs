@@ -1,0 +1,110 @@
+<app-barra-lateral-root></app-barra-lateral-root>
+
+<div class="container">
+    
+  <div class="card card-principal">
+    <div class="card-body">
+      <h2 class="text-center">Graficas</h2>
+      <!-- <div class="card card-body d-flex flex-row">
+       <h3>Este le toca a fatima</h3>
+       <p>Agregar una grafica en comparativa entre cuantos estudios si tienen doctor (plaza en 1), y cuantos no (plaza 0)</p>
+      
+      </div> -->
+
+      <div class="container mt-5 pt-5">
+        <div class="col-12">
+
+
+            <div class="row">
+    
+                <div class="col-3 pl-5 mt-5">
+                    <h1>Distribución de sexos</h1>
+                    <br>
+                    <br>
+                    <h3>Comparativa.</h3>
+                    <button class="btn btn-outline-primary" (click)="getData2()">Actualizar</button>
+                </div>
+    
+                <div class="col-7">
+                    <div class="chart-wrapper">
+                        <canvas baseChart
+                            [datasets] = "barChartData2"
+                            [labels]="barChartLabels2"
+                            [options]="barChartOptions"
+                            [legend]="barChartLegend"
+                            [type]="barChartType"
+                            [plugins]="barChartPluggins">
+                        </canvas>
+                    </div>
+                </div>
+            </div>
+            <br><br>
+            <h4 class="cuadritoinfo">Los doctores han tenido {{sumacitas}} citas exitosas</h4>
+            
+            <table class="tablita">
+                <thead>
+                    <tr>
+                        <th COLSPAN=3 style="text-align: center;">Total de usuarios registrados:</th>
+                    </tr>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Primer apellido</th>
+                        <th>Segundo apellido</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let unUsuario of todosusuarios">
+                    <th> {{unUsuario.nombre}} </th>
+                    <th> {{unUsuario.primape}} </th>
+                    <th>{{unUsuario.segape}}</th>
+                    </tr>
+                </tbody>
+            </table> 
+
+            <table class="tablita">
+                <thead>
+                    <tr>
+                        <th COLSPAN=2 style="text-align: center;">Accesos:</th>
+                    </tr>
+                    <tr>
+                        <th>Correo</th>
+                        <th>Contraseña</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let unUsuario of accesos">
+                    <th> {{unUsuario.correo}} </th>
+                    <th> {{unUsuario.contra}} </th>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="tablita">
+                <thead>
+                    <tr>
+                        <th COLSPAN=2 style="text-align: center;">Precio de los estudios:</th>
+                    </tr>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let unUsuario of precios">
+                    <th> {{unUsuario.nombre}} </th>
+                    <th> {{unUsuario.precio}} </th>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h4 class="cuadritoinfo">Hay {{precioscaros.length}} tratamientos que rebasan el precio promedio: <span *ngFor="let unUsuario of precioscaros"> {{unUsuario.precio}}, </span></h4>
+
+
+            <br>
+        </div>
+    </div>
+
+    </div>
+  </div>
+
+</div>

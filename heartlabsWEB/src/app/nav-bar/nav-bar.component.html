@@ -1,0 +1,54 @@
+<nav class="navbar navbar-expand-lg navbar-dark">
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <img src="../../assets/logos/menu_icon.svg" alt="menu">
+  </button>
+
+  <a class="navbar-brand" [routerLink]="['/home']">
+    <img src="../../assets/logos/hl-nav.png" height="43"  alt="logo">
+  </a>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav ulmenu ml-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/home">Inicio</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/estudios">Estudios</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/preguntas">Ayuda</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/conocenos">Contacto</a>
+      </li>
+
+      <li class="nav-item" *ngIf="banderaUsuario || banderaDoc">
+        <a class="nav-link" routerLink="/citas">Citas</a>
+      </li>
+
+      <li class="nav-item nombre" *ngIf="!bandera" (click)="RevisarTipo()">
+        <a class="nav-link">
+          {{nmbre}}
+          <img src="../../assets/login/user.svg" alt="user_icon" class="user_icon">
+        </a>
+      </li>
+
+      <li class="nav-item" *ngIf="!banderaUsuario && !banderaDoc">
+        <a class="nav-link" routerLink="/login">
+          <input class="sesion log-in" type="submit" value="Iniciar Sesion" (click)="getInfoUser()">
+        </a>
+      </li>
+
+      <li class="nav-item" *ngIf="banderaUsuario || banderaDoc">
+        <a class="nav-link">
+          <input class="sesion log-out" type="button" (click)="onClick()" value="Cerrar Sesion">
+        </a>
+      </li>
+    </ul>
+  </div>
+</nav>
